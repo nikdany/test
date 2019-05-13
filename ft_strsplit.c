@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 int		ft_wlen(char *s)
 {
 	int		l;
