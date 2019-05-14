@@ -22,18 +22,14 @@ char	*ft_go(int len, int nbr, char *s, char *end)
 	i = 1;
 	n = nbr;
 	while ((n = n / 10) > 0)
-	{
 		i++;
-		n = n / 10;
-	}
-	printf("n = %d i = %d\n", n, i);
 	n = ((nbr % 10) == 1 && i == 1) ? 1 : 0;
-	str = malloc(i + len + n + 1 + 4);
-	printf("n = %d len = %d\n", n, len);
+	str = malloc(i + len + (6 - n) + 1);
 	while (n < 7)
 	{
-		str[n + len + i] = end[n];
+		str[len + i] = end[n];
 		n++;
+		len++;
 	}
 	n = i;
 	while (i-- > 0)
@@ -64,6 +60,7 @@ int		main()
 {
 	printf("%s\n", moment(3600));
 	printf("%s\n", moment(3600*11));
-	printf("%s\n", moment(3600*24*30*115));
+	printf("%s\n", moment(3600*21));
+	printf("%s\n", moment(3600*24*30*111));
 	return (0);
 }
